@@ -36,11 +36,11 @@ const resourceSchema = new mongoose.Schema(
     },
     url: {
       type: String,
-      required: true,
+      required: false,
     },
     type: {
       type: String,
-      enum: ['video', 'docs', 'project', 'article'],
+      enum: ['video', 'docs', 'project', 'article','other'],
       required: true,
     },
     totalUnits: {

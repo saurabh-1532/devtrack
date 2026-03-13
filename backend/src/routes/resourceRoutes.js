@@ -7,6 +7,7 @@ import {
   updateProgress,
   addNote,
   deleteNote,
+  getResourcesByGoal,
 } from '../controllers/resourceController.js';
 import { protect } from '../middlewares/auth.js';
 
@@ -14,6 +15,7 @@ const router = Router();
 
 router.get('/', protect, getResources);
 router.post('/', protect, createResource);
+router.get('/goal/:goalId', protect, getResourcesByGoal);
 router.get('/:id', protect, getResource);
 router.patch('/:id/progress', protect, updateProgress);
 router.delete('/:id', protect, deleteResource);

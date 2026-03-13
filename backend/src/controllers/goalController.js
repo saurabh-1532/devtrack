@@ -24,7 +24,7 @@ export const createGoal = async (req, res) => {
 }
 
 
-//deltion
+//delete a goal
 export const deleteGoal = async (req, res) => {
   try {
     const { id } = req.params;
@@ -45,6 +45,23 @@ export const deleteGoal = async (req, res) => {
 
   } catch (err) {
     res.status(500).json({ message: err.message });
+  }
+};
+
+// DELETE all goals
+export const deleteAllGoals = async (req, res) => {
+  try {
+    const userId = req.user.id;
+
+    // delete all resources belonging to user's goals
+    await Resource.deleteMany({ userId });
+
+    // delete all goals
+    await Goal.deleteMany({ userId });
+
+    res.json({ message: 'All goals and resources deleted' });
+  } catch (err) {
+    res.status(500).json({ message: 'Server error' });
   }
 };
 

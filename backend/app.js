@@ -6,6 +6,7 @@ import goalRoutes from './src/routes/goalRoutes.js'
 import resourceRoutes from './src/routes/resourceRoutes.js';
 import progressRoutes from './src/routes/progressRoutes.js';
 import utilityRoutes from './src/routes/utilityRoutes.js';
+import userRoutes from './src/routes/userRoutes.js';
 
 
 const app = express();
@@ -13,11 +14,14 @@ app.use(express.json());
 app.use(cors());
 
 app.get('/', (req, res) => {
-  res.json({ message: 'DevTrack API is running' });
+  res.json({ message: 'Stride. API is running' });
 });
 
 //auth
 app.use('/api/auth',authRoutes);
+
+//user
+app.use('/api/user', userRoutes);
 
 //goal
 app.use('/api/goals',goalRoutes);
