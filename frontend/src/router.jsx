@@ -9,7 +9,7 @@ import GoalDetail from './pages/GoalDetail';
 import AddResource from './pages/AddResource';
 import ResourceDetail from './pages/ResourceDetail';
 import ProgressPage from './pages/ProgressPage';
-import ResourcesPage from './pages/ResourcePage';
+import ResourcesPage from './pages/ResourcesPage';
 import GoalForm from './pages/GoalForm';
 import ProfilePage from './pages/ProfilePage';
 import SettingsPage from './pages/SettingsPage';
